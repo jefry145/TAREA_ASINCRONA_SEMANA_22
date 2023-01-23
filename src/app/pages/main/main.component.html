@@ -1,0 +1,67 @@
+<mat-sidenav-container class="app-sidenav">
+
+    <mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
+  
+        <mat-toolbar class="app-sidenav">
+          <mat-toolbar-row>
+            <span>Account</span>
+            <span class="app-toolbar-filler"></span>
+          </mat-toolbar-row>
+          <mat-toolbar-row>
+            <button mat-raised-button color="accent"  routerLink="/user" class="app-sidebar-button">
+              My Account
+            </button>
+          </mat-toolbar-row>
+          <mat-toolbar-row>
+            <span>Log out</span>
+            <span class="app-toolbar-filler"></span>
+          </mat-toolbar-row>
+          <mat-toolbar-row>
+            <button mat-raised-button color="warn" (click)="logout()" class="app-sidebar-button">
+              Close my account
+            </button>
+          </mat-toolbar-row>
+        </mat-toolbar>
+  
+      </mat-sidenav>
+      <mat-toolbar class="navbar" color="primary">
+        <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+          <i class="material-icons">menu</i>
+        </button>
+        <a mat-button class="Link" routerLink="/pictures">Pictures</a>
+        <a mat-button class="Link" routerLink="/Postds">PosTds</a>
+     
+    </mat-toolbar>
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              This is the expansion title
+            </mat-panel-title>
+            <mat-panel-description>
+              This is a summary of the content
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>This is the primary content of the panel.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-card>
+        <mat-card-content>
+            <img class="banner" src="https://th.bing.com/th/id/OIP.J2GMeCWqSO2ZtQrBeFl8tAHaCs?w=320&h=127&c=7&r=0&o=5&pid=1.7" alt="">
+        </mat-card-content>
+      </mat-card>
+    
+</mat-sidenav-container>
+
